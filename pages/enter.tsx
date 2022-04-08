@@ -1,9 +1,11 @@
 import { googleAuthProvider, auth } from "../lib/firebase"
 import { signInWithPopup,signOut } from "firebase/auth"
+import { useContext } from "react"
+import { UserContext } from "../lib/context"
 
 const Enter = () => {
-  const user = null
-  const username = null
+  const {user, username}: any = {} = useContext(UserContext)
+  
   // USE CASES
   // 1 Show the User signout button if user is signed in
   // 2  Show <UsernameForm/> if user is signed in but missing a username
